@@ -27,7 +27,9 @@ test("production gateway serves the public site, native docs and actual Congo da
   let ready = false;
   for (let attempt = 0; attempt < 100; attempt++) {
     try {
-      if ((await fetch(origin + "/health/ready")).ok) {
+      const response = await fetch(origin + "/health/ready");
+      await response.arrayBuffer();
+      if (response.ok) {
         ready = true;
         break;
       }
@@ -41,11 +43,13 @@ test("production gateway serves the public site, native docs and actual Congo da
   });
   assert.equal(french.status, 307);
   assert.equal(french.headers.get("location"), "/fr");
+  await french.arrayBuffer();
   const saved = await fetch(origin + "/", {
     redirect: "manual",
     headers: { "accept-language": "fr", cookie: "242places-locale=en" },
   });
   assert.equal(saved.headers.get("location"), "/en");
+  await saved.arrayBuffer();
   for (const locale of ["fr", "en"])
     for (const path of [
       "",
@@ -104,7 +108,9 @@ test("production gateway serves the public site, native docs and actual Congo da
   assert.equal(docs.status, 200);
   assert.match(await docs.text(), /data-brand-pin/);
   assert.match(docs.headers.get("content-security-policy"), /nonce-/);
-  assert.equal((await fetch(origin + "/docs/assets/logo.svg")).status, 200);
+  const logo = await fetch(origin + "/docs/assets/logo.svg");
+  assert.equal(logo.status, 200);
+  await logo.arrayBuffer();
   const robots = await (await fetch(origin + "/robots.txt")).text();
   assert.match(
     robots,
@@ -137,5 +143,8 @@ test("production gateway serves the public site, native docs and actual Congo da
     const response = await fetch(origin + "/images/" + asset + ".webp");
     assert.equal(response.status, 200);
     assert.match(response.headers.get("content-type"), /image\/webp/);
+    const bytes = Buffer.from(await response.arrayBuffer());
+    assert.equal(bytes.toString("ascii", 0, 4), "RIFF");
+    assert.equal(bytes.toString("ascii", 8, 12), "WEBP");
   }
 });
