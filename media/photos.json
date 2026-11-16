@@ -1,0 +1,405 @@
+[
+  {
+    "id": "city-dolisie",
+    "placeId": "878b2292-0c82-4d33-a640-ef3b765b7b62",
+    "src": "/images/dolisie-1280.webp",
+    "srcSet": "/images/dolisie-384.webp 384w, /images/dolisie-768.webp 768w, /images/dolisie-1280.webp 1280w",
+    "width": 1280,
+    "height": 960,
+    "caption": {
+      "fr": "Gare de Dolisie",
+      "en": "Dolisie station"
+    },
+    "author": "Allweno",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gare_de_Dolisie.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "city-pointe-noire",
+    "placeId": "feed94c8-deda-4934-91a3-e4e4e0225e4a",
+    "src": "/images/pointe-noire-1200.webp",
+    "srcSet": "/images/pointe-noire-384.webp 384w, /images/pointe-noire-768.webp 768w, /images/pointe-noire-1200.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "caption": {
+      "fr": "Plage de Pointe-Noire",
+      "en": "Pointe-Noire beach"
+    },
+    "author": "user:unsonique",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pointe-Noire_Beach.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "city-brazzaville",
+    "placeId": "be83c679-2667-4935-9dad-0f63456298ad",
+    "src": "/images/brazzaville-1280.webp",
+    "srcSet": "/images/brazzaville-384.webp 384w, /images/brazzaville-768.webp 768w, /images/brazzaville-1280.webp 1280w",
+    "width": 1280,
+    "height": 720,
+    "caption": {
+      "fr": "Quartier OCH à Brazzaville",
+      "en": "OCH neighborhood in Brazzaville"
+    },
+    "author": "Prével EPOTA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quartier_OCH.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "commons-88562381-1d3528f3f73b",
+    "placeId": "05d80510-ca0a-4fee-ae4f-44f17e3a8173",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-88562381-1d3528f3f73b-1280.webp",
+    "srcSet": "/media/commons-88562381-1d3528f3f73b-384.webp 384w, /media/commons-88562381-1d3528f3f73b-768.webp 768w, /media/commons-88562381-1d3528f3f73b-1280.webp 1280w",
+    "width": 1280,
+    "height": 853,
+    "caption": {
+      "fr": "Terminus de bus à Bacongo",
+      "en": "Bus terminus in Bacongo"
+    },
+    "author": "Krissima POBA NGOUMA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Terminus_de_bus_%C3%A0_Bacongo.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Terminus de bus à Bacongo.jpg",
+    "sourceImageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Terminus_de_bus_%C3%A0_Bacongo.jpg/1280px-Terminus_de_bus_%C3%A0_Bacongo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "sourceSha256": "1d3528f3f73b3afbd20564dcbe6bffa0a092000533e46d2af3f0b52d9ddeab33",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-88562381-1d3528f3f73b-384.webp",
+        "objectKey": "candidates/commons-88562381-1d3528f3f73b/commons-88562381-1d3528f3f73b-384.webp",
+        "bytes": 33470
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-88562381-1d3528f3f73b-768.webp",
+        "objectKey": "candidates/commons-88562381-1d3528f3f73b/commons-88562381-1d3528f3f73b-768.webp",
+        "bytes": 133258
+      },
+      {
+        "width": 1280,
+        "src": "/media/commons-88562381-1d3528f3f73b-1280.webp",
+        "objectKey": "candidates/commons-88562381-1d3528f3f73b/commons-88562381-1d3528f3f73b-1280.webp",
+        "bytes": 337090
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-155562140-f6d1a86c92bf",
+    "placeId": "05d80510-ca0a-4fee-ae4f-44f17e3a8173",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-155562140-f6d1a86c92bf-1280.webp",
+    "srcSet": "/media/commons-155562140-f6d1a86c92bf-384.webp 384w, /media/commons-155562140-f6d1a86c92bf-768.webp 768w, /media/commons-155562140-f6d1a86c92bf-1280.webp 1280w",
+    "width": 1280,
+    "height": 960,
+    "caption": {
+      "fr": "Aux abords de la mosquée de Bacongo",
+      "en": "Around the Bacongo mosque"
+    },
+    "author": "Nzinga11",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_mosqu%C3%A9e_de_bacongo_02.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:La mosquée de bacongo 02.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/La_mosqu%C3%A9e_de_bacongo_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "sourceSha256": "f6d1a86c92bf0a56f8f0e24b326a7ad28060c1d922ef19648b2a0d2227a85627",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-155562140-f6d1a86c92bf-384.webp",
+        "objectKey": "candidates/commons-155562140-f6d1a86c92bf/commons-155562140-f6d1a86c92bf-384.webp",
+        "bytes": 29642
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-155562140-f6d1a86c92bf-768.webp",
+        "objectKey": "candidates/commons-155562140-f6d1a86c92bf/commons-155562140-f6d1a86c92bf-768.webp",
+        "bytes": 99320
+      },
+      {
+        "width": 1280,
+        "src": "/media/commons-155562140-f6d1a86c92bf-1280.webp",
+        "objectKey": "candidates/commons-155562140-f6d1a86c92bf/commons-155562140-f6d1a86c92bf-1280.webp",
+        "bytes": 233632
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-163100827-f5bf401e894c",
+    "placeId": "05d80510-ca0a-4fee-ae4f-44f17e3a8173",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-163100827-f5bf401e894c-960.webp",
+    "srcSet": "/media/commons-163100827-f5bf401e894c-384.webp 384w, /media/commons-163100827-f5bf401e894c-768.webp 768w, /media/commons-163100827-f5bf401e894c-960.webp 960w",
+    "width": 960,
+    "height": 1280,
+    "caption": {
+      "fr": "Étal de marché à Bacongo",
+      "en": "Market stall in Bacongo"
+    },
+    "author": "BOKOBA veroly",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:March%C3%A9_de_bacongo.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Marché de bacongo.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/28/March%C3%A9_de_bacongo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "sourceSha256": "f5bf401e894cb0a24c6bf7b799d8ce6b147f7a1350d1c29c0457bda96ea68bd0",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-163100827-f5bf401e894c-384.webp",
+        "objectKey": "candidates/commons-163100827-f5bf401e894c/commons-163100827-f5bf401e894c-384.webp",
+        "bytes": 41308
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-163100827-f5bf401e894c-768.webp",
+        "objectKey": "candidates/commons-163100827-f5bf401e894c/commons-163100827-f5bf401e894c-768.webp",
+        "bytes": 102190
+      },
+      {
+        "width": 960,
+        "src": "/media/commons-163100827-f5bf401e894c-960.webp",
+        "objectKey": "candidates/commons-163100827-f5bf401e894c/commons-163100827-f5bf401e894c-960.webp",
+        "bytes": 135860
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-165678487-bee262d3d389",
+    "placeId": "362c342f-6cc9-4976-afa9-cbea0bfd35cc",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-165678487-bee262d3d389-1280.webp",
+    "srcSet": "/media/commons-165678487-bee262d3d389-384.webp 384w, /media/commons-165678487-bee262d3d389-768.webp 768w, /media/commons-165678487-bee262d3d389-1280.webp 1280w",
+    "width": 1280,
+    "height": 964,
+    "caption": {
+      "fr": "Viaduc de Talangaï, corniche nord",
+      "en": "Talangaï viaduct, northern corniche"
+    },
+    "author": "Africany",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_01.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Viaduc Talangaï encore appelé corniche nord 01.jpg",
+    "sourceImageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_01.jpg/1280px-Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "sourceSha256": "bee262d3d3890acc319baaf8b962abddfe721c37447d4bc7430504f0b3fd70c7",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-165678487-bee262d3d389-384.webp",
+        "objectKey": "candidates/commons-165678487-bee262d3d389/commons-165678487-bee262d3d389-384.webp",
+        "bytes": 18044
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-165678487-bee262d3d389-768.webp",
+        "objectKey": "candidates/commons-165678487-bee262d3d389/commons-165678487-bee262d3d389-768.webp",
+        "bytes": 74706
+      },
+      {
+        "width": 1280,
+        "src": "/media/commons-165678487-bee262d3d389-1280.webp",
+        "objectKey": "candidates/commons-165678487-bee262d3d389/commons-165678487-bee262d3d389-1280.webp",
+        "bytes": 211744
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-165678501-fd0978e4a5a2",
+    "placeId": "362c342f-6cc9-4976-afa9-cbea0bfd35cc",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-165678501-fd0978e4a5a2-1280.webp",
+    "srcSet": "/media/commons-165678501-fd0978e4a5a2-384.webp 384w, /media/commons-165678501-fd0978e4a5a2-768.webp 768w, /media/commons-165678501-fd0978e4a5a2-1280.webp 1280w",
+    "width": 1280,
+    "height": 964,
+    "caption": {
+      "fr": "Vue depuis le viaduc de Talangaï",
+      "en": "View from the Talangaï viaduct"
+    },
+    "author": "Africany",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_05.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Viaduc Talangaï encore appelé corniche nord 05.jpg",
+    "sourceImageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_05.jpg/1280px-Viaduc_Talanga%C3%AF_encore_appel%C3%A9_corniche_nord_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "sourceSha256": "fd0978e4a5a27265181f57846018d936c590fefe32f07ec4781acaa5771bc9fe",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-165678501-fd0978e4a5a2-384.webp",
+        "objectKey": "candidates/commons-165678501-fd0978e4a5a2/commons-165678501-fd0978e4a5a2-384.webp",
+        "bytes": 14142
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-165678501-fd0978e4a5a2-768.webp",
+        "objectKey": "candidates/commons-165678501-fd0978e4a5a2/commons-165678501-fd0978e4a5a2-768.webp",
+        "bytes": 60732
+      },
+      {
+        "width": 1280,
+        "src": "/media/commons-165678501-fd0978e4a5a2-1280.webp",
+        "objectKey": "candidates/commons-165678501-fd0978e4a5a2/commons-165678501-fd0978e4a5a2-1280.webp",
+        "bytes": 177636
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-196365876-298fb69f9b30",
+    "placeId": "5394bcee-1112-433a-9f6a-e735857aa0a8",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-196365876-298fb69f9b30-1000.webp",
+    "srcSet": "/media/commons-196365876-298fb69f9b30-384.webp 384w, /media/commons-196365876-298fb69f9b30-768.webp 768w, /media/commons-196365876-298fb69f9b30-1000.webp 1000w",
+    "width": 1000,
+    "height": 667,
+    "caption": {
+      "fr": "École de peinture de Poto-Poto",
+      "en": "Poto-Poto painting school"
+    },
+    "author": "Africany",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ecole_de_peinture_de_Poto-Poto_Brazzaville_03.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Ecole de peinture de Poto-Poto Brazzaville 03.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Ecole_de_peinture_de_Poto-Poto_Brazzaville_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "sourceSha256": "298fb69f9b309f5594c31c14730380e08a6efbb614370b83e3fa9654a9a20cd2",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-196365876-298fb69f9b30-384.webp",
+        "objectKey": "candidates/commons-196365876-298fb69f9b30/commons-196365876-298fb69f9b30-384.webp",
+        "bytes": 32384
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-196365876-298fb69f9b30-768.webp",
+        "objectKey": "candidates/commons-196365876-298fb69f9b30/commons-196365876-298fb69f9b30-768.webp",
+        "bytes": 115296
+      },
+      {
+        "width": 1000,
+        "src": "/media/commons-196365876-298fb69f9b30-1000.webp",
+        "objectKey": "candidates/commons-196365876-298fb69f9b30/commons-196365876-298fb69f9b30-1000.webp",
+        "bytes": 181288
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-196365878-43a957fa4d48",
+    "placeId": "5394bcee-1112-433a-9f6a-e735857aa0a8",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-196365878-43a957fa4d48-1000.webp",
+    "srcSet": "/media/commons-196365878-43a957fa4d48-384.webp 384w, /media/commons-196365878-43a957fa4d48-768.webp 768w, /media/commons-196365878-43a957fa4d48-1000.webp 1000w",
+    "width": 1000,
+    "height": 667,
+    "caption": {
+      "fr": "Entrée de l’école de peinture de Poto-Poto",
+      "en": "Entrance to the Poto-Poto painting school"
+    },
+    "author": "Africany",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ecole_de_peinture_de_Poto-Poto_Brazzaville_01.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:Ecole de peinture de Poto-Poto Brazzaville 01.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ecole_de_peinture_de_Poto-Poto_Brazzaville_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "sourceSha256": "43a957fa4d483bf31302e7c56749e6deadf7145caf21ec1ba7ea5da935e7f125",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-196365878-43a957fa4d48-384.webp",
+        "objectKey": "candidates/commons-196365878-43a957fa4d48/commons-196365878-43a957fa4d48-384.webp",
+        "bytes": 32900
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-196365878-43a957fa4d48-768.webp",
+        "objectKey": "candidates/commons-196365878-43a957fa4d48/commons-196365878-43a957fa4d48-768.webp",
+        "bytes": 113746
+      },
+      {
+        "width": 1000,
+        "src": "/media/commons-196365878-43a957fa4d48-1000.webp",
+        "objectKey": "candidates/commons-196365878-43a957fa4d48/commons-196365878-43a957fa4d48-1000.webp",
+        "bytes": 176794
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  },
+  {
+    "id": "commons-155562150-26e0a473a19e",
+    "placeId": "05d80510-ca0a-4fee-ae4f-44f17e3a8173",
+    "relatedPlaceIds": [
+      "be83c679-2667-4935-9dad-0f63456298ad"
+    ],
+    "src": "/media/commons-155562150-26e0a473a19e-1280.webp",
+    "srcSet": "/media/commons-155562150-26e0a473a19e-384.webp 384w, /media/commons-155562150-26e0a473a19e-768.webp 768w, /media/commons-155562150-26e0a473a19e-1280.webp 1280w",
+    "width": 1280,
+    "height": 960,
+    "caption": {
+      "fr": "Une rue aux abords de la mosquée de Bacongo",
+      "en": "Street around the Bacongo mosque"
+    },
+    "author": "Nzinga11",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_mosqu%C3%A9e_de_bacongo_05.jpg",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "reviewStatus": "pending",
+    "sourceTitle": "File:La mosquée de bacongo 05.jpg",
+    "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/La_mosqu%C3%A9e_de_bacongo_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "sourceSha256": "26e0a473a19e06b15f70b049d4bcc90aaf5abd21485b50b4a593571e9922f472",
+    "variants": [
+      {
+        "width": 384,
+        "src": "/media/commons-155562150-26e0a473a19e-384.webp",
+        "objectKey": "candidates/commons-155562150-26e0a473a19e/commons-155562150-26e0a473a19e-384.webp",
+        "bytes": 24480
+      },
+      {
+        "width": 768,
+        "src": "/media/commons-155562150-26e0a473a19e-768.webp",
+        "objectKey": "candidates/commons-155562150-26e0a473a19e/commons-155562150-26e0a473a19e-768.webp",
+        "bytes": 80336
+      },
+      {
+        "width": 1280,
+        "src": "/media/commons-155562150-26e0a473a19e-1280.webp",
+        "objectKey": "candidates/commons-155562150-26e0a473a19e/commons-155562150-26e0a473a19e-1280.webp",
+        "bytes": 189696
+      }
+    ],
+    "changes": "Resized, encoded as WebP, metadata removed; no scene elements changed."
+  }
+]

@@ -5,6 +5,8 @@ import { details } from "@/lib/catalog";
 import { text, label, type Locale } from "@/lib/i18n";
 import { Explorer } from "@/components/explorer";
 import { ShareLink } from "@/components/share-link";
+import { PlaceGallery } from "@/components/place-gallery";
+import { placePhotos } from "@/lib/place-photos";
 import { describePlace } from "@/lib/place-description";
 import { pageMetadata, siteOrigin, jsonLd } from "@/lib/seo";
 export async function generateMetadata({
@@ -91,9 +93,17 @@ export default async function PlacePage({
       </nav>
       <div className="page-head">
         <span className="kind-label">{label(place.resource, locale)}</span>
-        <h1>{place.name}</h1>
+        <div className="place-heading-row">
+          <h1>{place.name}</h1>
+          <ShareLink locale={locale} />
+        </div>
         <p className="place-description">{describePlace(place, locale)}</p>
       </div>
+      <PlaceGallery
+        photos={placePhotos(id)}
+        placeName={place.name}
+        locale={locale}
+      />
       <div className="place-detail-grid">
         <div>
           <h2>
@@ -155,7 +165,6 @@ export default async function PlacePage({
               "Explore all descendants",
             )}{" "}
           </Link>
-          <ShareLink locale={locale} />
         </aside>
       </div>
     </section>
