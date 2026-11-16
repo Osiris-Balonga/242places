@@ -119,3 +119,14 @@ test("failed suggestions preserve free-text submission", async () => {
   await user.keyboard("{ArrowDown}{Enter}");
   assert.equal(pushed.at(-1), "/fr/explore?q=Aucun");
 });
+test("suggestions open above a search near the viewport bottom", async () => {
+  globalThis.fetch = async () => Response.json({ data: places, meta: { total: 2 } });
+  const user = mount();
+  const input = screen.getByRole("combobox", { name: "Rechercher un lieu" });
+  Object.defineProperty(input.closest("form"), "getBoundingClientRect", {
+    value: () => ({ bottom: window.innerHeight - 40, top: window.innerHeight - 100 }),
+  });
+  await user.type(input, "Rivi");
+  await screen.findByRole("listbox");
+  assert.equal(document.querySelector(".suggestion-panel")?.getAttribute("data-side"), "above");
+});
