@@ -21,7 +21,7 @@
   gap: 8px;
   height: clamp(260px, 31vw, 420px);
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 0;
 }
 .gallery-mosaic > .gallery-tile:first-child {
   grid-row: span 2;
@@ -47,7 +47,7 @@
   padding: 0;
   overflow: hidden;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
   background: var(--surface);
   cursor: pointer;
 }
@@ -84,8 +84,12 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  letter-spacing: 0;
+  padding: 0;
   font-size: clamp(1.3rem, 3vw, 2.5rem);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
@@ -234,7 +238,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 190px 115px;
     height: auto;
-    border-radius: 16px;
+    border-radius: 0;
     gap: 6px;
   }
   .gallery-mosaic > .gallery-tile:first-child {
