@@ -1,14 +1,12 @@
 "use client";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Search, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { PlaceAutocomplete } from "./place-autocomplete";
+import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { SearchForm } from "./search-form";
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "./ui/empty";
 import { MapPinOff } from "lucide-react";
 import { Button } from "./ui/button";
-import { FloatingSearch } from "./floating-search";
 import {
   Select,
   SelectContent,
@@ -17,7 +15,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { Skeleton } from "./ui/skeleton";
-import { parseSearch, updateSearch, resources } from "@/lib/search-state";
+import { parseSearch, updateSearch } from "@/lib/search-state";
 import { label, text, type Locale } from "@/lib/i18n";
 type Place = {
   id: string;
@@ -48,9 +46,7 @@ export function Explorer({
   const params = useSearchParams(),
     router = useRouter(),
     path = usePathname();
-  const state = parseSearch(new URLSearchParams(params));
-  const [draft, setDraft] = useState(state.q);
-  useEffect(() => setDraft(state.q), [state.q]);
+  const state = parseSearch(parent ? new URLSearchParams({ offset: params.get("offset") ?? "0" }) : new URLSearchParams(params));
   const update = (changes: Record<string, string | number>) =>
     router.push(
       path + "?" + updateSearch(new URLSearchParams(params), changes),
@@ -74,56 +70,10 @@ export function Explorer({
   });
   return (
     <div className={"explorer " + (parent ? "embedded" : "")}>
-      <FloatingSearch>
-        <form
-          role="search"
-          className="explorer-search"
-          onSubmit={(e) => {
-            e.preventDefault();
-            update({ q: draft });
-          }}
-        >
-          <Search size={20} />
-          <PlaceAutocomplete
-            locale={locale}
-            value={draft}
-            resource={state.resource}
-            parent={parent ?? state.parent}
-            onChange={setDraft}
-            onSelect={(id) => router.push("/" + locale + "/places/" + id)}
-          />
-          <Button type="submit">
-            {text(locale, "Rechercher", "Search")} <ArrowRight size={16} />
-          </Button>
-        </form>
-      </FloatingSearch>
-      {parent && <p className="search-scope">{text(locale, "Recherchez parmi tous les lieux de ce territoire, y compris ses quartiers et villages.", "Search all places within this territory, including its neighborhoods and villages.")}</p>}
+      <SearchForm key={path + state.q + state.resource} locale={locale} initialQuery={state.q} initialResource={state.resource} />
       <div className="explorer-body">
-        <aside className="filters">
+        {!parent && <aside className="filters">
           <h2>{text(locale, "Affiner la recherche", "Refine your search")}</h2>
-          <label htmlFor="resource-filter">
-            {text(locale, "Type de lieu", "Place type")}
-          </label>
-          <Select
-            value={state.resource || "all"}
-            onValueChange={(value) =>
-              update({ resource: value === "all" ? "" : value })
-            }
-          >
-            <SelectTrigger id="resource-filter">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">
-                {text(locale, "Tous les types", "All types")}
-              </SelectItem>
-              {resources.map((key) => (
-                <SelectItem value={key} key={key}>
-                  {label(key, locale)}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
           {!parent && (
             <>
               <label htmlFor="territory-filter">
@@ -175,9 +125,10 @@ export function Explorer({
                 )}
               </p>
             )}
-        </aside>
+        </aside>}
         <section
           className="results"
+          data-reveal
           aria-busy={isFetching}
           aria-label={text(locale, "Résultats", "Results")}
         >

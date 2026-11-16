@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { MapPin, ArrowUpRight } from "lucide-react";
 import { Input } from "./ui/input";
@@ -31,6 +31,22 @@ export function PlaceAutocomplete({
     [open, setOpen] = useState(false),
     [query, setQuery] = useState("");
   const [active, setActive] = useState<string>();
+  const container = useRef<HTMLDivElement>(null);
+  const [above, setAbove] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const position = () => {
+      const form = container.current?.closest("form")?.getBoundingClientRect();
+      if (form) setAbove(form.bottom + Math.min(380, window.innerHeight * 0.5) + 18 > window.innerHeight);
+    };
+    position();
+    window.addEventListener("scroll", position, { passive: true });
+    window.addEventListener("resize", position);
+    return () => {
+      window.removeEventListener("scroll", position);
+      window.removeEventListener("resize", position);
+    };
+  }, [open]);
   useEffect(() => {
     if (open && active)
       document
@@ -65,7 +81,7 @@ export function PlaceAutocomplete({
     onSelect(id);
   }
   return (
-    <div className="place-autocomplete">
+    <div className="place-autocomplete" ref={container}>
       <Input
         name="q"
         value={value}
@@ -113,7 +129,7 @@ export function PlaceAutocomplete({
         }}
       />
       {expanded && (
-        <div className="suggestion-panel">
+        <div className="suggestion-panel" data-side={above ? "above" : "below"}>
           <ul
             id={id}
             role="listbox"
