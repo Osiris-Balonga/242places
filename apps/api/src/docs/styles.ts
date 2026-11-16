@@ -1,4 +1,7 @@
 export const shellStyles = String.raw`
+@font-face { font-family: 'Chakra Petch'; font-style: normal; font-weight: 600; font-display: swap; src: url('/docs/assets/brand-600.woff2') format('woff2'); }
+.docs-header .docs-brand { font-family: 'Chakra Petch', sans-serif; font-weight: 600; }
+
 .docs-brand{display:inline-flex;align-items:center;gap:8px;line-height:1}.docs-brand>span{display:block;translate:0 1px}.docs-header .docs-brand svg{width:68px;height:28px;fill:currentColor;stroke:none}.docs-layout{animation:docs-arrive .25s cubic-bezier(.16,1,.3,1) backwards}@keyframes docs-arrive{from{opacity:.6;transform:translateY(5px)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.docs-layout{animation:none}html{scroll-behavior:auto}}
 
 :root { --scalar-custom-header-height: 64px; color-scheme: dark; }
