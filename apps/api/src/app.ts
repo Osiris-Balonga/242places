@@ -9,12 +9,14 @@ import { registerAdministrationRoutes } from './routes/administration.ts';
 import { registerHealthRoutes } from './routes/health.ts';
 import { registerPlacesRoutes } from './routes/places.ts';
 import { registerReferenceRoutes } from './routes/reference.ts';
+import { registerRepository, type RepositoryFetch } from './docs/repository.ts';
 
 export interface AppOptions {
   catalog?: GeographicCatalog;
   logger?: boolean;
   trustedProxies?: false | string[];
   rateLimitMax?: number;
+  repositoryFetch?: RepositoryFetch;
 }
 
 export async function buildApp(options: AppOptions = {}) {
@@ -40,5 +42,6 @@ export async function buildApp(options: AppOptions = {}) {
   registerPlacesRoutes(app, catalog);
   registerReferenceRoutes(app, catalog);
   registerDiscoveryRoutes(app, catalog);
+  registerRepository(app, options.repositoryFetch);
   return app;
 }

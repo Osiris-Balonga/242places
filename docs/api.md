@@ -188,3 +188,5 @@ The tests include HTTP injection and a real server lifecycle. `npm run test:acce
 The API queries data; it does not seed your database or execute export SQL. Use the [CLI](generation.md) to generate standalone JSON, CSV, Excel or database exports. Use the explicit [import workflow](seeding.md) to write a verified resource package into PostgreSQL. The optional local SDK is a third integration choice and does not require this HTTP service.
 
 Neighborhoods may also belong to a rural community: `GET /v1/rural-communities/{id}/neighborhoods`. The `ruralCommunityId` field exposes that parent without inventing a commune.
+
+The shared documentation header links to the GitHub repository after the theme control. A best-effort lookup shows the star count only from ten stars; it is cached for five minutes and never blocks geographic queries or documentation rendering.

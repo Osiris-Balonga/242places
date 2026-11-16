@@ -172,3 +172,22 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+.kind-label[data-resource="countries"] { background: #e8eaf2; color: #414b69; }
+[data-theme="dark"] .kind-label[data-resource="countries"] { background: #30364d; color: #d8dff7; }
+.kind-label[data-resource="departments"] { background: #ece8fa; color: #674395; }
+[data-theme="dark"] .kind-label[data-resource="departments"] { background: #342747; color: #e5ccff; }
+.kind-label[data-resource="communes"] { background: #e2f0fd; color: #205989; }
+[data-theme="dark"] .kind-label[data-resource="communes"] { background: #20384b; color: #b5dcff; }
+.kind-label[data-resource="districts"] { background: #dff3ee; color: #246454; }
+[data-theme="dark"] .kind-label[data-resource="districts"] { background: #203e35; color: #b6ead8; }
+.kind-label[data-resource="arrondissements"] { background: #fff0d4; color: #86551c; }
+[data-theme="dark"] .kind-label[data-resource="arrondissements"] { background: #49371f; color: #ffdaa0; }
+.kind-label[data-resource="urbanCommunities"] { background: #fce6ec; color: #8e365b; }
+[data-theme="dark"] .kind-label[data-resource="urbanCommunities"] { background: #482939; color: #ffc6dc; }
+.kind-label[data-resource="ruralCommunities"] { background: #eaf2db; color: #526624; }
+[data-theme="dark"] .kind-label[data-resource="ruralCommunities"] { background: #344124; color: #d9ecad; }
+.kind-label[data-resource="neighborhoods"] { background: #e1f2f4; color: #23616c; }
+[data-theme="dark"] .kind-label[data-resource="neighborhoods"] { background: #203e45; color: #b6e7ee; }
+.kind-label[data-resource="villages"] { background: #f7eadd; color: #805239; }
+[data-theme="dark"] .kind-label[data-resource="villages"] { background: #453326; color: #edcfb2; }
