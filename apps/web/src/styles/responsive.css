@@ -56,9 +56,9 @@
   .brand {
     font-size: 1.35rem;
   }
-  .brand-pin {
-    width: 24px;
-    height: 24px;
+  .brand-mark {
+    width: 66px;
+    height: 28px;
   }
   .desktop-nav,
   .header-actions > .docs-link {

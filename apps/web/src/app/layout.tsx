@@ -6,7 +6,7 @@ import { Providers } from "@/components/providers";
 import { siteOrigin } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/favicon.svg", apple: "/brand/apple-touch-icon.png" },
   title: { default: "242Places · Congo", template: "%s · 242Places" },
   description:
     "Explore the places and administrative relationships of the Republic of the Congo.",

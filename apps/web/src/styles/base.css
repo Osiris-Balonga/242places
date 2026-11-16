@@ -117,18 +117,16 @@ figcaption {
 }
 .brand {
   font-size: 1.6rem;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.04em;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
-.brand-pin {
-  color: var(--pin);
-  height: 29px;
-  width: 29px;
-  stroke-width: 2;
-}
+.brand-mark { width: 78px; height: 32px; object-fit: contain; }
+.brand-mark-dark { display: none; }
+[data-theme="dark"] .brand-mark-light { display: none; }
+[data-theme="dark"] .brand-mark-dark { display: block; }
 .desktop-nav,
 .header-actions {
   display: flex;
