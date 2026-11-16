@@ -213,3 +213,5 @@ figcaption {
 
 .brand { align-items: center; line-height: 1; gap: 6px; }
 .brand > span { display: block; translate: 0 1px; }
+
+.site-header a:has(.brand):hover, .site-footer a:has(.brand):hover, footer a:has(.brand):hover { color: inherit; }

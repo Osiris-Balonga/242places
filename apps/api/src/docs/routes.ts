@@ -1,3 +1,4 @@
+import { readFile } from 'node:fs/promises';
 import { randomBytes } from "node:crypto";
 import type { FastifyInstance, FastifyReply } from "fastify";
 import type { GeographicCatalog } from "242places";
@@ -47,6 +48,7 @@ export function registerDocs(
   catalog: GeographicCatalog,
 ): void {
   const hidden = { schema: { hide: true } };
+  app.get('/docs/assets/brand-600.woff2', hidden, async (_request, reply) => reply.type('font/woff2').header('Cache-Control', 'public, max-age=86400').send(await readFile(new URL('../../assets/brand-600.woff2', import.meta.url))));
   for (const locale of ["fr", "en"])
     app.get("/" + locale, hidden, (_request, reply) =>
       reply.redirect("/docs/" + locale + "/introduction", 302),
