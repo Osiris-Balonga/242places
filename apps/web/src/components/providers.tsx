@@ -14,6 +14,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (
       typeof matchMedia !== "function" ||
+      typeof IntersectionObserver === "undefined" ||
       matchMedia("(prefers-reduced-motion: reduce)").matches
     )
       return;
@@ -27,11 +28,19 @@ export function Providers({ children }: { children: React.ReactNode }) {
         }),
       { threshold: 0.12 },
     );
-    document.querySelectorAll("[data-reveal]").forEach((el) => {
+    const registered = new WeakSet<Element>();
+    const register = () => document.querySelectorAll("[data-reveal]").forEach((el) => {
+      if (registered.has(el)) return;
+      registered.add(el);
       el.classList.add("reveal-ready");
       observer.observe(el);
     });
-    return () => observer.disconnect();
+    register();
+    // Server-streamed sections can arrive after the route's initial effect.
+    const mutations = new MutationObserver(register);
+    mutations.observe(document.getElementById("main") ?? document.body, { childList: true, subtree: true });
+    return () => { mutations.disconnect(); observer.disconnect(); };
+
   }, [path]);
   return (
     <QueryClientProvider client={client}>

@@ -125,7 +125,7 @@ export default async function PlacePage({
             <Explorer locale={locale} parent={id} direct />
           </Suspense>
         </div>
-        <aside className="place-sidebar">
+        <aside className="place-sidebar" data-reveal>
           <h2>
             {text(
               locale,

@@ -106,7 +106,7 @@ export function PlaceGallery({
     );
   }
   return (
-    <section className="place-gallery" aria-label={title}>
+    <section className="place-gallery" aria-label={title} data-reveal>
       <div className="gallery-mosaic" data-count={Math.min(photos.length, 4)}>
         {tile(0)}
         {photos.length > 1 && tile(1)}

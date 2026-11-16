@@ -1,0 +1,20 @@
+import assert from "node:assert/strict";
+import { test, mock, afterEach } from "node:test";
+import { render, screen, cleanup } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+let path = "/fr/places/first";
+mock.module("next/navigation", { namedExports: { usePathname: () => path } });
+const { default: Template } = await import("../src/app/[locale]/template.tsx");
+afterEach(cleanup);
+test("navigation between two place IDs restarts the page surface while local query changes preserve it", async () => {
+  const tree = () => <Template><input aria-label="Transient search" defaultValue="" /></Template>;
+  const view = render(tree());
+  const field = screen.getByRole("textbox");
+  await userEvent.type(field, "draft");
+  view.rerender(tree());
+  assert.equal(screen.getByRole("textbox"), field);
+  path = "/fr/places/second";
+  view.rerender(tree());
+  assert.notEqual(screen.getByRole("textbox"), field);
+  assert.equal((screen.getByRole("textbox") as HTMLInputElement).value, "");
+});
