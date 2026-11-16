@@ -20,6 +20,8 @@ All four skyline files resize the **same wide composition**, preserving relative
 
 `footer-sky-day.webp` and `footer-sky-night.webp` share the same framing and cloud placement. CSS selects the blue daytime or starry nighttime sky according to the active theme. The skyline is the footer's last element. `map.webp` is decorative; the catalog still has no measured geometry.
 
-`skyline-og.png` is a 960×320 PNG encoding of the same skyline, used by the local Open Graph image renderer. It adds no new landmark composition. Social cards render text and the shared pin logo as vector/HTML content above it.
+`skyline-og.png` is a 960×320 PNG encoding of the same skyline, used by the local Open Graph image renderer. It adds no new landmark composition. Social cards render HTML text and a local transparent PNG of the shared Congo-silhouette logo above it.
 
 Core labels, controls, statistics and relationships are accessible HTML from the versioned catalog, never baked into an image.
+
+Place-profile photographs, review status, captions and per-image licenses are listed in [the photo manifest](../../../../media/photos.json). Review-only images use `/media/`; see the [review workflow](../../../../media/README.md).
