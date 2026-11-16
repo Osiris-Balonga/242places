@@ -1,4 +1,6 @@
-export const shellClient = String.raw`
+import { repositoryClient } from './repository-client.ts';
+
+export const shellClient = repositoryClient + String.raw`
 const fr = document.documentElement.lang === 'fr';
 const menu = document.querySelector('.docs-menu');
 const sidebar = document.querySelector('.docs-sidebar');
