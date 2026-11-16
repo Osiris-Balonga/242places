@@ -92,7 +92,7 @@ export default async function PlacePage({
         <span aria-current="page">{place.name}</span>
       </nav>
       <div className="page-head">
-        <span className="kind-label">{label(place.resource, locale)}</span>
+        <span className="kind-label" data-resource={place.resource}>{label(place.resource, locale)}</span>
         <div className="place-heading-row">
           <h1>{place.name}</h1>
           <ShareLink locale={locale} />

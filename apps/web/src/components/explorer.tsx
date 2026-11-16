@@ -175,7 +175,7 @@ export function Explorer({
             >
               <div>
                 <h3>{place.name}</h3>
-                <span className="kind-label">
+                <span className="kind-label" data-resource={place.resource}>
                   {label(place.resource, locale)}
                 </span>
                 {(!parent || state.q || state.resource) && (
