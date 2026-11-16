@@ -188,3 +188,5 @@ Les tests comprennent l’injection HTTP et le cycle de vie d’un vrai serveur.
 L’API consulte les données ; elle ne remplit pas votre base et n’exécute pas le SQL d’export. Utilisez la [CLI](generation.fr.md) pour produire du JSON, CSV, Excel ou des exports de bases autonomes. Utilisez le [parcours d’import explicite](seeding.fr.md) pour écrire un paquet de ressources vérifié dans PostgreSQL. Le SDK local optionnel constitue un autre choix d’intégration et ne dépend pas de ce service HTTP.
 
 Les quartiers peuvent aussi dépendre d’une communauté rurale : `GET /v1/rural-communities/{id}/neighborhoods`. Le champ `ruralCommunityId` expose ce parent sans inventer de commune.
+
+L’en-tête commun de la documentation propose le dépôt GitHub après le thème. Le nombre d’étoiles apparaît à partir de dix ; sa récupération facultative est mise en cache cinq minutes et ne bloque ni les requêtes géographiques ni le rendu de la documentation.
