@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "@fontsource-variable/inter";
+import "@fontsource/chakra-petch/latin-500.css";
+import "@fontsource/chakra-petch/latin-600.css";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { siteOrigin } from "@/lib/seo";
