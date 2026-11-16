@@ -37,8 +37,8 @@ function mount(count: number, locale: "fr" | "en" = "fr") {
 test("an unphotographed place has an honest noninteractive placeholder", () => {
   mount(0);
   assert.ok(
-    screen.getByRole("img", {
-      name: "Aucune photo disponible pour Lieu exemple",
+    screen.getByRole("heading", {
+      name: "Aucune photo disponible",
     }),
   );
   assert.equal(screen.queryByRole("button"), null);

@@ -67,3 +67,5 @@ Le service Node Render gratuit existant utilise la compilation `npm ci --include
 ## Galeries et identité visuelle
 
 Les fiches présentent la mosaïque validée sous leur introduction. Une ou deux photos ont une disposition simplifiée ; trois utilisent la mosaïque ; les suivantes sont accessibles par une tuile avec leur nombre restant. La galerie plein écran gère clavier, Échap, retour du focus, cadrage intégral et crédits individuels. Les images absentes ou en erreur ont un remplacement neutre traduit. Les rattachements utilisent les UUID stables, sans modifier l’API géographique ni les exports CLI. Voir [validation des photos et stockage R2](../media/README.fr.md) et [déclinaisons du logo](../assets/brand/README.md).
+
+La recherche d’une fiche reste limitée au territoire consulté. Sans nom ni catégorie, elle liste les enfants directs ; un nom ou une catégorie recherche tous les descendants documentés. Les suggestions suivent ce même périmètre et ouvrent le lieu choisi par UUID. Une recherche vide propose de réinitialiser les filtres ; une liste de rattachements non documentée et une fiche sans photo validée ont des états vides distincts et traduits.

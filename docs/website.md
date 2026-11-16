@@ -67,3 +67,5 @@ The existing free Render Node service uses build `npm ci --include=dev && npm ru
 ## Place galleries and branding
 
 Place profiles use the approved photo mosaic below their introduction. One or two photographs get simpler layouts; three use the mosaic; additional photographs appear through a numeric overflow tile. The full-screen viewer supports keyboard navigation, Escape, restored focus, original framing and per-image credits. Missing and failed images have neutral localized replacements. Photos are associated by stable UUID and do not change the geographic API or CLI exports. See [photo review and R2 staging](../media/README.md) and [shared brand assets](../assets/brand/README.md).
+
+Detail-page search keeps the current territory as its scope. Without a query or category, it lists direct children; a name or category searches all documented descendants. Suggestions use the same territory and open the selected place by UUID. Empty searches offer a reset; an undocumented child list and a place without approved photos have distinct localized empty states.

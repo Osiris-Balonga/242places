@@ -111,7 +111,10 @@
   background: var(--surface);
 }
 .place-no-photo {
-  min-height: 156px;
+  min-height: clamp(240px, 24vw, 340px);
+  max-width: 960px;
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
   border-radius: 16px;
   margin-bottom: 3rem;
   font-size: 0.9rem;

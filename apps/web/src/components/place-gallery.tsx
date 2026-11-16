@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ImageOff, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from "./ui/empty";
 import type { PlacePhoto } from "../lib/place-photo";
 type Locale = "fr" | "en";
 function Photo({
@@ -66,14 +67,15 @@ export function PlaceGallery({
   }
   if (!photos.length)
     return (
-      <div
-        className="place-no-photo"
-        role="img"
-        aria-label={`${fr ? "Aucune photo disponible pour" : "No photos available for"} ${placeName}`}
-      >
-        <ImageOff size={34} aria-hidden="true" />
-        <span>{fr ? "Aucune photo disponible" : "No photos available"}</span>
-      </div>
+      <Empty className="place-no-photo">
+        <EmptyHeader>
+          <EmptyMedia><ImageOff size={28} aria-hidden="true" /></EmptyMedia>
+          <EmptyTitle>{fr ? "Aucune photo disponible" : "No photos available"}</EmptyTitle>
+          <EmptyDescription>{fr
+            ? `Nous n’avons pas encore de photo validée pour ${placeName}. Découvrez ses lieux et ses rattachements ci-dessous.`
+            : `We don’t have an approved photo of ${placeName} yet. Explore its places and relationships below.`}</EmptyDescription>
+        </EmptyHeader>
+      </Empty>
     );
   function tile(at: number) {
     const photo = photos[at];

@@ -16,12 +16,14 @@ export function PlaceAutocomplete({
   locale,
   value,
   resource,
+  parent,
   onChange,
   onSelect,
 }: {
   locale: Locale;
   value: string;
   resource: string;
+  parent?: string;
   onChange: (value: string) => void;
   onSelect: (id: string) => void;
 }) {
@@ -43,8 +45,9 @@ export function PlaceAutocomplete({
   const current = query === value.trim();
   const params = new URLSearchParams({ q: query, limit: "6" });
   if (resource) params.set("resource", resource);
+  if (parent) params.set("parent", parent);
   const { data, isPending, error } = useQuery<{ data: Suggestion[] }>({
-    queryKey: ["place-suggestions", query, resource],
+    queryKey: ["place-suggestions", query, resource, parent ?? ""],
     enabled: open && ready && current,
     queryFn: async ({ signal }) => {
       const response = await fetch("/v1/search?" + params, { signal });
