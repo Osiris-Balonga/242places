@@ -1,12 +1,12 @@
 "use client";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowRight, Search, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { Input } from "./ui/input";
+import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { SearchForm } from "./search-form";
+import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription, EmptyContent } from "./ui/empty";
+import { MapPinOff } from "lucide-react";
 import { Button } from "./ui/button";
-import { FloatingSearch } from "./floating-search";
 import {
   Select,
   SelectContent,
@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "./ui/select";
 import { Skeleton } from "./ui/skeleton";
-import { parseSearch, updateSearch, resources } from "@/lib/search-state";
+import { parseSearch, updateSearch } from "@/lib/search-state";
 import { label, text, type Locale } from "@/lib/i18n";
 type Place = {
   id: string;
@@ -46,9 +46,7 @@ export function Explorer({
   const params = useSearchParams(),
     router = useRouter(),
     path = usePathname();
-  const state = parseSearch(new URLSearchParams(params));
-  const [draft, setDraft] = useState(state.q);
-  useEffect(() => setDraft(state.q), [state.q]);
+  const state = parseSearch(parent ? new URLSearchParams({ offset: params.get("offset") ?? "0" }) : new URLSearchParams(params));
   const update = (changes: Record<string, string | number>) =>
     router.push(
       path + "?" + updateSearch(new URLSearchParams(params), changes),
@@ -61,7 +59,7 @@ export function Explorer({
   if (state.q) api.set("q", state.q);
   if (state.resource) api.set("resource", state.resource);
   if (parent || state.parent) api.set("parent", parent ?? state.parent);
-  if (direct) api.set("direct", "true");
+  if (direct && !state.q && !state.resource) api.set("direct", "true");
   const { data, error, isPending, isFetching, refetch } = useQuery<Results>({
     queryKey: ["places", api.toString()],
     queryFn: async ({ signal }) => {
@@ -72,59 +70,10 @@ export function Explorer({
   });
   return (
     <div className={"explorer " + (parent ? "embedded" : "")}>
-      <FloatingSearch>
-        <form
-          role="search"
-          className="explorer-search"
-          onSubmit={(e) => {
-            e.preventDefault();
-            update({ q: draft });
-          }}
-        >
-          <Search size={20} />
-          <Input
-            name="q"
-            aria-label={text(locale, "Rechercher un lieu", "Search places")}
-            placeholder={text(
-              locale,
-              "Rechercher un lieu…",
-              "Search for a place…",
-            )}
-            maxLength={100}
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-          />
-          <Button type="submit">
-            {text(locale, "Rechercher", "Search")} <ArrowRight size={16} />
-          </Button>
-        </form>
-      </FloatingSearch>
+      <SearchForm key={path + state.q + state.resource} locale={locale} initialQuery={state.q} initialResource={state.resource} />
       <div className="explorer-body">
-        <aside className="filters">
+        {!parent && <aside className="filters">
           <h2>{text(locale, "Affiner la recherche", "Refine your search")}</h2>
-          <label htmlFor="resource-filter">
-            {text(locale, "Type de lieu", "Place type")}
-          </label>
-          <Select
-            value={state.resource || "all"}
-            onValueChange={(value) =>
-              update({ resource: value === "all" ? "" : value })
-            }
-          >
-            <SelectTrigger id="resource-filter">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">
-                {text(locale, "Tous les types", "All types")}
-              </SelectItem>
-              {resources.map((key) => (
-                <SelectItem value={key} key={key}>
-                  {label(key, locale)}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
           {!parent && (
             <>
               <label htmlFor="territory-filter">
@@ -176,9 +125,10 @@ export function Explorer({
                 )}
               </p>
             )}
-        </aside>
+        </aside>}
         <section
           className="results"
+          data-reveal
           aria-busy={isFetching}
           aria-label={text(locale, "Résultats", "Results")}
         >
@@ -228,7 +178,7 @@ export function Explorer({
                 <span className="kind-label">
                   {label(place.resource, locale)}
                 </span>
-                {!parent && (
+                {(!parent || state.q || state.resource) && (
                   <p>
                     {place.ancestors
                       .filter((a) => a.resource !== "countries")
@@ -243,16 +193,22 @@ export function Explorer({
             </Link>
           ))}
           {data?.meta.total === 0 && (
-            <div className="empty-state">
-              <h3>{text(locale, "Aucun lieu trouvé", "No places found")}</h3>
-              <p>
-                {text(
-                  locale,
-                  "Essayez un autre nom ou retirez un filtre. Le référentiel reste partiel.",
-                  "Try another name or remove a filter. Coverage remains partial.",
-                )}
-              </p>
-            </div>
+            <Empty className="search-empty">
+              <EmptyHeader>
+                <EmptyMedia><MapPinOff size={24} aria-hidden="true" /></EmptyMedia>
+                <EmptyTitle>{parent && !state.q && !state.resource
+                  ? text(locale, "Aucun lieu rattaché répertorié", "No attached places recorded")
+                  : text(locale, "Aucun lieu trouvé", "No places found")}</EmptyTitle>
+                <EmptyDescription>{parent && !state.q && !state.resource
+                  ? text(locale, "Aucun lieu directement rattaché n’est documenté ici pour le moment. Le référentiel reste partiel.", "No directly attached places are documented here yet. Coverage remains partial.")
+                  : text(locale, "Essayez un autre nom ou retirez un filtre. Le référentiel reste partiel.", "Try another name or remove a filter. Coverage remains partial.")}</EmptyDescription>
+              </EmptyHeader>
+              <EmptyContent>
+                {state.q || state.resource || state.parent ? <Button variant="outline" onClick={() => update({ q: "", resource: "", parent: "", offset: 0 })}>
+                  {text(locale, "Effacer la recherche", "Clear search")}
+                </Button> : <Link href={"/" + locale + "/explore"}>{text(locale, "Explorer les lieux du Congo", "Explore places in the Congo")}</Link>}
+              </EmptyContent>
+            </Empty>
           )}
           {data && data.meta.total > 20 && (
             <nav className="pagination" aria-label="Pagination">

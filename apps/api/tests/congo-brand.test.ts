@@ -6,8 +6,14 @@ test("documentation presents Congo first with shared branding and compatible cou
   t.after(() => app.close());
   const page = await app.inject("/docs/fr/congo/list");
   assert.equal(page.statusCode, 200);
-  assert.match(page.body, /data-brand-pin/);
-  assert.match(page.body, /242Places API<\/a>/);
+  assert.match(page.body, /data-brand-territory/);
+  assert.match(page.body, /aria-label="242Places API"/);
+  assert.doesNotMatch(page.body, /data-brand-pin/);
+  const logo = await app.inject("/docs/assets/logo.svg");
+  assert.equal(logo.statusCode, 200);
+  assert.match(logo.headers["content-type"]!, /image\/svg\+xml/);
+  assert.match(logo.body, /id="country"/);
+  assert.equal((page.body.match(/xlink:href="#two"/g) ?? []).length, 2);
   assert.match(page.body, /<title>.*242Places API<\/title>/);
   assert.match(page.body, /href="\/fr"/);
   assert.doesNotMatch(page.body, /<h2>Pays<\/h2>/);

@@ -17,13 +17,17 @@ import { label, text, type Locale } from "@/lib/i18n";
 export function SearchForm({
   locale,
   scope,
+  initialQuery = "",
+  initialResource = "",
 }: {
   locale: Locale;
   scope?: "departments";
+  initialQuery?: string;
+  initialResource?: string;
 }) {
   const router = useRouter();
-  const [query, setQuery] = useState(""),
-    [resource, setResource] = useState<string>(scope ?? "");
+  const [query, setQuery] = useState(initialQuery),
+    [resource, setResource] = useState<string>(scope ?? initialResource);
   return (
     <FloatingSearch>
       <form

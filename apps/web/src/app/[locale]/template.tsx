@@ -1,3 +1,7 @@
+"use client";
+import { usePathname } from "next/navigation";
+
 export default function Template({ children }: { children: React.ReactNode }) {
-  return <div className="page-enter">{children}</div>;
+  const pathname = usePathname();
+  return <div key={pathname} className="page-enter">{children}</div>;
 }

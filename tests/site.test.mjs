@@ -106,7 +106,7 @@ test("production gateway serves the public site, native docs and actual Congo da
   );
   const docs = await fetch(origin + "/docs/fr/congo/list");
   assert.equal(docs.status, 200);
-  assert.match(await docs.text(), /data-brand-pin/);
+  assert.match(await docs.text(), /data-brand-territory/);
   assert.match(docs.headers.get("content-security-policy"), /nonce-/);
   const logo = await fetch(origin + "/docs/assets/logo.svg");
   assert.equal(logo.status, 200);

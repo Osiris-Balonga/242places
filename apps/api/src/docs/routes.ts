@@ -13,6 +13,7 @@ import { chapters, type Locale } from "./content.ts";
 import { shellStyles } from "./styles.ts";
 import { shellClient } from "./client.ts";
 import { renderChapter } from "./render.ts";
+import { brandIcon } from "./brand.ts";
 import { chapterSpecification } from "./specification.ts";
 
 function html(reply: FastifyReply, render: (nonce: string) => string) {
@@ -54,7 +55,7 @@ export function registerDocs(
     reply
       .type("image/svg+xml")
       .send(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e76450" stroke-width="2"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+        brandIcon,
       ),
   );
   const indexes = new Map<Locale, ReferenceOperation[]>();
