@@ -46,22 +46,9 @@ jobs:
   postgres:
     name: PostgreSQL integration
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:18
-        env:
-          POSTGRES_USER: georeference_test
-          POSTGRES_PASSWORD: local_test_only
-          POSTGRES_DB: georeference_test
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U georeference_test -d georeference_test"
-          --health-interval 5s
-          --health-timeout 5s
-          --health-retries 15
     env:
-      DATABASE_URL: postgres://georeference_test:local_test_only@localhost:5432/georeference_test
+      POSTGRES_PASSWORD: local_test_only
+      DATABASE_URL: postgres://georeference_test:local_test_only@localhost:55432/places_dev
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -69,4 +56,8 @@ jobs:
           node-version: '24.18.0'
           cache: npm
       - run: npm ci
+      - run: docker compose up -d --wait db
+      - run: docker compose exec -T db bash /workspace/database/test.sh
       - run: npm run test:postgres
+      - if: always()
+        run: docker compose down --volumes
