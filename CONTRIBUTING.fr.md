@@ -54,3 +54,5 @@ Séparez les licences du logiciel et des données. Enregistrez licences, attribu
 ## Avant de demander une revue
 
 Examinez le diff indexé complet, lancez les vérifications adaptées et retirez les modifications sans lien. Signalez honnêtement les limites et vérifications sautées ou impossibles. Pour une vulnérabilité, suivez [SECURITY.fr.md](SECURITY.fr.md) plutôt que publier les détails d'exploitation dans une issue publique.
+
+Pour le développement et les tests PostgreSQL/PostGIS en local, consultez [le guide de la base](docs/local-database.fr.md).

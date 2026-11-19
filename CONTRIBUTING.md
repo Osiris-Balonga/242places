@@ -54,3 +54,5 @@ Keep software and data licensing separate. Record source licenses, attribution, 
 ## Before requesting review
 
 Inspect the full staged diff, run the applicable checks, and remove unrelated changes. State limitations honestly, including checks that were skipped or could not run. For security-sensitive findings, follow [SECURITY.md](SECURITY.md) instead of posting exploit details in a public issue.
+
+For local PostgreSQL/PostGIS development and integration tests, see [the database guide](docs/local-database.md).
