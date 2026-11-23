@@ -1,0 +1,67 @@
+name: Geographic correction / Correction géographique
+description: Report a wrong name, parent or missing place / Signaler un nom, un rattachement ou un lieu manquant
+title: "[Correction] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Do not include phone numbers, email addresses, home addresses, receipts or private documents. For a security problem, follow SECURITY.md instead.
+
+        Cette issue est publique. N'indiquez ni numéro de téléphone, ni adresse e-mail, ni adresse personnelle, ni reçu, ni document privé. Pour un problème de sécurité, suivez SECURITY.fr.md.
+
+        A source is welcome but not required: local knowledge is a valid starting point for a check. The examples shown in grey are fictional.
+
+        Une source est bienvenue mais pas obligatoire : une connaissance locale est un point de départ valable pour une vérification. Les exemples en gris sont fictifs.
+  - type: input
+    id: place
+    attributes:
+      label: Place concerned / Lieu concerné
+      description: Name and public ID (UUID), or a link to the place page on the public site. / Nom et identifiant public (UUID), ou lien vers la page du lieu sur le site public.
+      placeholder: "Quartier Exemple-Nord — 00000000-0000-4000-8000-000000000001"
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction / Correction proposée
+      description: What is wrong today and what it should be. For a new parent, give its name and ID if you know them. / Ce qui est faux aujourd'hui et ce qu'il faudrait. Pour un nouveau rattachement, donnez son nom et son identifiant si vous les connaissez.
+      placeholder: |
+        Current parent: Arrondissement Exemple 1
+        Proposed parent: Arrondissement Exemple 2 — 00000000-0000-4000-8000-000000000002
+    validations:
+      required: true
+  - type: dropdown
+    id: basis
+    attributes:
+      label: How do you know? / Comment le savez-vous ?
+      options:
+        - Official document (law, decree, report) / Document officiel (loi, décret, rapport)
+        - Map or website / Carte ou site web
+        - Local knowledge (I live or work there) / Connaissance locale (j'habite ou je travaille sur place)
+        - Other / Autre
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link (optional) / Lien vers la source (facultatif)
+      placeholder: "https://example.org/fictional-municipal-report.pdf"
+  - type: input
+    id: observation-date
+    attributes:
+      label: Date of the information (optional) / Date de l'information (facultatif)
+      description: An approximate date is fine. / Une date approximative suffit.
+      placeholder: "June 2024 / juin 2024"
+  - type: input
+    id: reuse-terms
+    attributes:
+      label: Reuse terms of the source (optional) / Conditions de réutilisation de la source (facultatif)
+      description: Licence or terms if you know them. Leave empty if unsure. / Licence ou conditions si vous les connaissez. Laissez vide en cas de doute.
+      placeholder: "Official text, excluded from copyright / Texte officiel, exclu du droit d'auteur"
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue / Issue publique
+      options:
+        - label: I have not included personal contact details or private documents. / Je n'ai inclus ni coordonnées personnelles ni documents privés.
+          required: true
