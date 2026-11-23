@@ -25,6 +25,51 @@ npm run test:api
 
 Pour le serveur compilé, lancez `npm run build:api`, puis `npm run start:api`. Cette compilation inclut le cœur partagé. `npm run build` et la génération du paquet public restent des opérations CLI/SDK. Lancez `npm run test:acceptance` pour la parité API/sources/exports et l’isolation de la CLI empaquetée. Voir [l’utilisation de l’API](docs/api.fr.md) et [l’architecture](docs/architecture.fr.md).
 
+## D'une fork à une pull request
+
+Le dépôt public s'ouvre sur `main`, mais les contributions partent de `dev`. `main` ne reçoit que les livraisons.
+
+1. Forkez `Osiris-Balonga/242places` sur GitHub, clonez votre fork et enregistrez le dépôt original sous le nom `upstream` :
+
+   ```sh
+   git clone https://github.com/<votre-compte>/242places.git
+   cd 242places
+   git remote add upstream https://github.com/Osiris-Balonga/242places.git
+   ```
+
+2. Créez une branche de tâche depuis le `dev` original, et non depuis le `main` de votre fork :
+
+   ```sh
+   git fetch upstream
+   git checkout -b docs/import-guide upstream/dev
+   ```
+
+   Le nom de branche doit commencer par un préfixe accepté : `feature/`, `feat/`, `fix/`, `chore/`, `docs/`, `refactor/`, `test/` ou `ci/`. Une pull request depuis un autre nom de branche est refusée par la vérification `Branch policy`.
+
+3. Faites votre modification, puis lancez les vérifications adaptées (voir [Installation locale](#installation-locale)). `npm run check` est le minimum ; ajoutez `npm run test:api` ou `npm run test:acceptance` si votre changement touche l'API ou les exports.
+
+4. Poussez la branche vers votre fork :
+
+   ```sh
+   git push -u origin docs/import-guide
+   ```
+
+5. Ouvrez la pull request vers le dépôt original, avec pour base `Osiris-Balonga/242places:dev` et pour tête `<votre-compte>:docs/import-guide`. GitHub propose `main` par défaut : remplacez la base par `dev`. Vous pouvez aussi ouvrir directement la comparaison :
+
+   `https://github.com/Osiris-Balonga/242places/compare/dev...<votre-compte>:242places:docs/import-guide`
+
+   Remplissez le modèle de pull request et liez l'issue (par exemple `Closes #46`). La revue se demande sur la pull request elle-même ; mentionnez le mainteneur dans un commentaire si aucun relecteur n'a été désigné.
+
+6. Si `dev` avance avant la fusion de votre pull request, mettez votre branche à jour par une fusion plutôt que par un push forcé :
+
+   ```sh
+   git fetch upstream
+   git merge upstream/dev
+   git push
+   ```
+
+Les livraisons sont distinctes : le mainteneur ouvre une pull request du `dev` du dépôt original vers `main`. Une pull request vers `main` depuis une fork ou depuis une autre branche que `dev` est refusée.
+
 ## Branches et pull requests
 
 - Créez une branche de tâche ciblée depuis `dev`, par exemple `feature/country-aliases`, `fix/csv-empty-values` ou `docs/import-guide`.

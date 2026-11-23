@@ -25,6 +25,51 @@ npm run test:api
 
 For the compiled server, run `npm run build:api` then `npm run start:api`. The build includes the shared core. `npm run build` and public package generation remain CLI/SDK operations. Run `npm run test:acceptance` for API/source/export parity and packed CLI isolation. See [API usage](docs/api.md) and [architecture](docs/architecture.md).
 
+## From a fork to a pull request
+
+The public repository opens on `main`, but contributions start from `dev`. `main` only receives releases.
+
+1. Fork `Osiris-Balonga/242places` on GitHub, then clone your fork and register the original repository as `upstream`:
+
+   ```sh
+   git clone https://github.com/<your-account>/242places.git
+   cd 242places
+   git remote add upstream https://github.com/Osiris-Balonga/242places.git
+   ```
+
+2. Create a task branch from the original `dev`, not from your fork's `main`:
+
+   ```sh
+   git fetch upstream
+   git checkout -b docs/import-guide upstream/dev
+   ```
+
+   The branch name must start with a supported prefix: `feature/`, `feat/`, `fix/`, `chore/`, `docs/`, `refactor/`, `test/` or `ci/`. A pull request from any other branch name is rejected by the `Branch policy` check.
+
+3. Make your change, then run the applicable checks (see [Local setup](#local-setup)). `npm run check` is the minimum; add `npm run test:api` or `npm run test:acceptance` when your change touches the API or exports.
+
+4. Push the branch to your fork:
+
+   ```sh
+   git push -u origin docs/import-guide
+   ```
+
+5. Open the pull request against the original repository, with base `Osiris-Balonga/242places:dev` and head `<your-account>:docs/import-guide`. GitHub suggests `main` by default: change the base to `dev`. You can also open the comparison directly:
+
+   `https://github.com/Osiris-Balonga/242places/compare/dev...<your-account>:242places:docs/import-guide`
+
+   Fill in the pull request template and link the issue (for example `Closes #46`). Reviews are requested on the pull request itself; mention the maintainer in a comment if no reviewer has been assigned.
+
+6. If `dev` moves before your pull request is merged, update your branch with a merge rather than a force push:
+
+   ```sh
+   git fetch upstream
+   git merge upstream/dev
+   git push
+   ```
+
+Releases are separate: the maintainer opens a pull request from the original repository's `dev` to `main`. A pull request to `main` from a fork or from any branch other than `dev` is rejected.
+
 ## Branches and pull requests
 
 - Create a focused task branch from `dev`, for example `feature/country-aliases`, `fix/csv-empty-values`, or `docs/import-guide`.
